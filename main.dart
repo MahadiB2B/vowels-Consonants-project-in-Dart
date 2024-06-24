@@ -1,11 +1,28 @@
-import 'dart:io';
-void main(){
-  print("Enter a Letter");
-  String letter = stdin.readLineSync()!;
-  if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter== 'u' ||
-  letter == 'A' || letter == 'E' || letter == 'I'|| letter== 'O'|| letter == 'U'
-  ){
-    print("$letter is a Vowels");
+class Media {
+  void play() {
+    print("playing media..");
   }
-  else{print("$letter is a Consonants");}
+}
+
+class Song extends Media {
+  final String artist;
+
+  Song(this.artist);
+
+  @override
+  void play() {
+    print("Playing song by $artist");
+  }
+}
+
+void main() {
+  // Create an instance of Media
+  Media media = Media();
+
+  // Create an instance of Song
+  Song song = Song("The Beatles");
+
+  // Call their play() methods
+  media.play();
+  song.play();
 }
